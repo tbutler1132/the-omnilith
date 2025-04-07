@@ -2,7 +2,7 @@ export interface Convergence {
   id: string;
   vector?: string;
   description: string;
-  temporality: "present" | "future";
+  temporality: "present" | "future" | "virtual";
   horizon: number;
   apex: Convergence;
   tributaries: Convergence[];
