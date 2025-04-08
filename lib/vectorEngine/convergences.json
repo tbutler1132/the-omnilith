@@ -1,1 +1,17 @@
-{}
+{
+  "1": {
+    "id": "1",
+    "vector": "vector1",
+    "description": "Convergence 1",
+    "temporality": "present",
+    "horizon": 10,
+    "tributaries": [],
+    "context": [
+      "context1"
+    ],
+    "status": "not started",
+    "priority": "medium",
+    "focus": "focus1",
+    "time": "2023-10-01"
+  }
+}
