@@ -4,17 +4,10 @@ const convergenceStore = new ConvergenceStoreJson();
 async function run() {
   await convergenceStore.load();
   convergenceStore.createConvergence({
-    id: "2",
-    vector: "vector1",
-    description: "Convergence 1",
-    temporality: "present",
-    horizon: 1,
-    tributaries: [],
-    context: ["context1"],
-    status: "not started",
-    priority: "medium",
-    focus: "Software",
-    time: "2023-10-01",
+    id: "3",
+    description: "Feed me",
+    time: "2025-04-19T17:30:00.000Z",
+    title: "Convergence 1",
   });
 }
 

@@ -12,7 +12,6 @@ export class ConvergenceStoreJson implements ConvergenceStore {
   async load() {
     try {
       const data = await fs.readFile(this.filePath, "utf-8");
-      console.log("Data loaded:", data);
       this.convergences = JSON.parse(data);
     } catch (error) {
       console.error("Error loading convergences:", error);
@@ -31,7 +30,6 @@ export class ConvergenceStoreJson implements ConvergenceStore {
 
   createConvergence(convergence: Convergence) {
     this.convergences[convergence.id] = convergence;
-    console.log("Convergence created:", this.convergences);
     this.save();
   }
 

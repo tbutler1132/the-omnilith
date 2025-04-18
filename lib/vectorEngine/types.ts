@@ -1,16 +1,23 @@
+//Entities
 export interface Convergence {
   id: string;
-  vector?: string;
+  title: string;
   description: string;
-  temporality: "present" | "future" | "virtual";
-  horizon: number;
-  apex?: Convergence;
-  tributaries: Convergence[];
-  context: string[];
-  status: "not started" | "in progress" | "completed";
-  priority: "low" | "medium" | "high";
-  focus: string;
   time: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface Horizon {
+  id: string;
+  name: string;
+  description: string;
+  order: number;
 }
 
 export interface ConvergenceStore {
