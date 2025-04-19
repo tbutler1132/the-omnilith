@@ -1,4 +1,6 @@
 export interface Convergence {
+  title: string;
+  id: string;
   description: string;
   vector: boolean;
   outcomes?: string[];

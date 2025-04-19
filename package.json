@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:types": "ts-node scripts/generate-typescript-from-schema.ts"
+    "generate:types": "ts-node scripts/generate-typescript-from-schema.ts",
+    "create:Convergence": "ts-node scripts/create-convergence.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
