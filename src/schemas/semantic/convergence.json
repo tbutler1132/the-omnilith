@@ -1,0 +1,103 @@
+{
+  "entity": "Convergence",
+  "description": "A structured unit of intention — like a task, goal, idea, or action. Recursively composed and semantically aware.",
+  "fields": [
+    {
+      "name": "description",
+      "type": "string",
+      "prompt": "What is this convergence about?"
+    },
+
+    {
+      "name": "vector",
+      "type": "boolean",
+      "description": "Is this convergence a physical action?"
+    },
+
+    {
+      "name": "outcomes",
+      "type": "string[]",
+      "optional": true,
+      "description": "Intended impact on other objects or entities."
+    },
+
+    { "name": "type", "type": "reference", "target": "Type" },
+
+    {
+      "name": "active",
+      "type": "boolean",
+      "description": "Is this convergence currently in focus or intended for a later time?"
+    },
+
+    { "name": "horizon", "type": "reference", "target": "Horizon" },
+
+    {
+      "name": "apex",
+      "type": "reference",
+      "target": "Convergence",
+      "optional": true,
+      "description": "The convergence this flows into."
+    },
+
+    {
+      "name": "tributaries",
+      "type": "reference[]",
+      "target": "Convergence",
+      "optional": true,
+      "description": "Child convergences leading to this one."
+    },
+
+    {
+      "name": "context",
+      "type": "string[]",
+      "optional": true,
+      "description": "Contexts in which the physical action can be performed."
+    },
+
+    { "name": "status", "type": "reference", "target": "Status" },
+
+    { "name": "priority", "type": "reference", "target": "Priority" },
+
+    {
+      "name": "focus",
+      "type": "string",
+      "optional": true,
+      "description": "Personal keyword or shorthand for this convergence."
+    },
+
+    {
+      "name": "time",
+      "type": "datetime",
+      "description": "When this convergence is scheduled to occur.",
+      "optional": true
+    },
+
+    {
+      "name": "reminder",
+      "type": "datetime",
+      "optional": true,
+      "description": "Optional reminder time. More likely for dormant convergences."
+    },
+
+    {
+      "name": "staging",
+      "type": "boolean",
+      "description": "Whether this convergence is in an onboarding/early state."
+    },
+
+    {
+      "name": "hours",
+      "type": "number",
+      "optional": true,
+      "description": "Estimated or tracked hours of effort."
+    },
+
+    {
+      "name": "user",
+      "type": "reference",
+      "target": "User",
+      "optional": true,
+      "description": "Assigned user or creator."
+    }
+  ]
+}
