@@ -2,6 +2,18 @@ import prompts from "prompts";
 import { FileConvergenceStore } from "../src/lib/stores/convergence/fileConvergenceStore";
 
 const getConvergences = async () => {
+  const envResponse = await prompts({
+    type: "select",
+    name: "environment",
+    message: "Which environment do you want to use?",
+    choices: [
+      { title: "Development", value: "dev" },
+      { title: "Production", value: "prod" },
+    ],
+  });
+
+  const environment = envResponse.environment;
+
   const response = await prompts({
     type: "select",
     name: "filter",
@@ -18,7 +30,7 @@ const getConvergences = async () => {
     const nextWeek = new Date();
     nextWeek.setDate(nextWeek.getDate() + 7);
     const today = new Date();
-    const fileConvergenceStore = new FileConvergenceStore("dev");
+    const fileConvergenceStore = new FileConvergenceStore(environment);
     const convergences = await fileConvergenceStore.getAll();
     const filteredConvergences = convergences.filter((convergence) => {
       const convergenceDate = convergence.time
@@ -34,7 +46,7 @@ const getConvergences = async () => {
     today.setHours(0, 0, 0, 0);
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
-    const fileConvergenceStore = new FileConvergenceStore("dev");
+    const fileConvergenceStore = new FileConvergenceStore(environment);
     const convergences = await fileConvergenceStore.getAll();
     const filteredConvergences = convergences.filter((convergence) => {
       const convergenceDate = convergence.time
@@ -50,8 +62,7 @@ const getConvergences = async () => {
     return;
   } else if (response.filter === "all") {
     console.log("Fetching all convergences...");
-    // Proceed to fetch all convergences
-    const fileConvergenceStore = new FileConvergenceStore("dev");
+    const fileConvergenceStore = new FileConvergenceStore(environment);
     const convergences = await fileConvergenceStore.getAll();
     if (convergences.length === 0) {
       console.log("No convergences found.");

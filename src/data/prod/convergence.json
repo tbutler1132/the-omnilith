@@ -12,5 +12,33 @@
     "description": "Second workout",
     "time": "Wed Apr 23 2025 18:00:15 GMT-0400 (Eastern Daylight Time)",
     "schemaVersion": 0
+  },
+  {
+    "id": "a3bc62e7-00ae-4dde-9806-20d473ce6cf6",
+    "title": "Xeno Hip-hop session 1",
+    "description": "First xeno hip-hop session in system",
+    "time": "Tue Apr 22 2025 07:30:00 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
+  },
+  {
+    "id": "df582a79-2434-400d-80b5-88ee50c0db1c",
+    "title": "Xeno hip-hop session 2",
+    "description": "Second music session",
+    "time": "Wed Apr 23 2025 07:30:19 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
+  },
+  {
+    "id": "44a9074f-c25e-4973-85c5-89b9a7fb1573",
+    "title": "Xeno hip-hop 3",
+    "description": "Music session 3",
+    "time": "Thu Apr 24 2025 07:30:53 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
+  },
+  {
+    "id": "71515262-1921-41a6-a807-6c85fef759ce",
+    "title": "Xeno hip-hop session 4",
+    "description": "Session 4 music",
+    "time": "Fri Apr 25 2025 07:30:00 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
   }
 ]
