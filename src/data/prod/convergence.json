@@ -40,5 +40,12 @@
     "description": "Session 4 music",
     "time": "Fri Apr 25 2025 07:30:00 GMT-0400 (Eastern Daylight Time)",
     "schemaVersion": 0
+  },
+  {
+    "id": "d6fb02ed-d965-4277-a645-f05e7b6d9e2b",
+    "title": "Complete Promordium Draft 1",
+    "description": "Finish the first draft",
+    "time": "Sun Apr 20 2025 20:00:25 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
   }
 ]
