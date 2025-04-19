@@ -27,4 +27,14 @@ export class FileConvergenceStore {
       throw error;
     }
   }
+
+  async getAll(): Promise<Convergence[]> {
+    try {
+      const data = await fs.readFile(this.filePath, "utf-8").catch(() => "[]");
+      return JSON.parse(data);
+    } catch (error) {
+      console.error("Error reading from file:", error);
+      throw error;
+    }
+  }
 }

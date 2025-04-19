@@ -3,4 +3,5 @@ export interface Convergence {
   title: string;
   description: string;
   time?: string;
+  schemaVersion: number;
 }

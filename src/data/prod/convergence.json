@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "88114804-1f33-4df1-924b-b669441d9852",
+    "title": "Workout 1",
+    "description": "First workout",
+    "time": "Mon Apr 21 2025 17:00:18 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
+  },
+  {
+    "id": "ca5ce102-3b83-423d-ada6-443ad404ddc7",
+    "title": "Workout 2",
+    "description": "Second workout",
+    "time": "Wed Apr 23 2025 18:00:15 GMT-0400 (Eastern Daylight Time)",
+    "schemaVersion": 0
+  }
+]

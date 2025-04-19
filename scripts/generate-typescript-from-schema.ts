@@ -26,6 +26,7 @@ interface FieldDefinition {
 interface SemanticSchema {
   entity: string;
   description?: string;
+  schemaVersion: string;
   fields: FieldDefinition[];
 }
 
@@ -52,6 +53,8 @@ function generateInterface(schema: SemanticSchema): string {
     const optional = field.optional ? "?" : "";
     lines.push(`  ${name}${optional}: ${type};`);
   }
+
+  lines.push(`  schemaVersion: number;`);
 
   lines.push("}");
   return lines.join("\n");

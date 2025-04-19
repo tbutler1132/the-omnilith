@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate:types": "tsx scripts/generate-typescript-from-schema.ts",
-    "create:Convergence": "tsx ./scripts/create-convergence.ts"
+    "create:Convergence": "tsx ./scripts/create-convergence.ts",
+    "get:Convergences": "tsx ./scripts/get-convergences.ts"
   },
   "dependencies": {
     "next": "15.2.4",

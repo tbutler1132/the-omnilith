@@ -1,5 +1,6 @@
 import prompts from "prompts";
 import { FileConvergenceStore } from "../src/lib/stores/convergence/fileConvergenceStore";
+import convergenceSchema from "../src/schemas/semantic/convergence.json" assert { type: "json" };
 
 const createConvergence = async () => {
   const questions: prompts.PromptObject[] = [
@@ -41,6 +42,7 @@ const createConvergence = async () => {
       title: response.title,
       description: response.description,
       time: response.time.toString(),
+      schemaVersion: parseInt(convergenceSchema.schemaVersion),
     });
     console.log("Convergence created successfully");
   } catch (error) {
