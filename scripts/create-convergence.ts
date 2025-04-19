@@ -1,24 +1,51 @@
+import prompts from "prompts";
 import { FileConvergenceStore } from "../src/lib/stores/convergence/fileConvergenceStore";
-import { Convergence } from "@/types/convergence";
 
-const convergence: Convergence = {
-  id: "1",
-  title: "Convergence Title",
-  description: "Convergence Description",
-  vector: true,
-  outcomes: ["Outcome 1", "Outcome 2"],
-  type: "Personal",
-  active: true,
-  horizon: "0",
-  apex: "Apex",
-  tributaries: ["Tributary 1", "Tributary 2"],
-  context: ["AM", "PM"],
-  status: "Active",
-  priority: "High",
-  focus: "Misc",
-  time: "12:00",
-  reminder: "1 hour",
-  staging: false,
+const createConvergence = async () => {
+  const questions: prompts.PromptObject[] = [
+    {
+      type: "text",
+      name: "title",
+      message: "What is the title of the convergence?",
+    },
+    {
+      type: "text",
+      name: "description",
+      message: "What is the description of the convergence?",
+    },
+    {
+      type: "date",
+      name: "time",
+      message: "When must the convergence occur?",
+      validate: (date) =>
+        date < Date.now() ? "Chosen date should be in the future" : true,
+    },
+    {
+      type: "select",
+      name: "env",
+      choices: [
+        { title: "dev", value: "dev" },
+        { title: "prod", value: "prod" },
+      ],
+      initial: 0,
+      message: "Which environment do you want to use?",
+    },
+  ];
+
+  const response = await prompts(questions);
+
+  try {
+    const fileConvergenceStore = new FileConvergenceStore(response.env);
+    fileConvergenceStore.create({
+      id: crypto.randomUUID(),
+      title: response.title,
+      description: response.description,
+      time: response.time.toString(),
+    });
+    console.log("Convergence created successfully");
+  } catch (error) {
+    console.error("Error:", error);
+  }
 };
 
-FileConvergenceStore.create(convergence);
+createConvergence();
